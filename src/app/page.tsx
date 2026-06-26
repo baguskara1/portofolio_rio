@@ -7,9 +7,9 @@ import { FiArrowRight, FiMail } from "react-icons/fi";
 import ScrollIndicator from "@/components/ScrollIndicator";
 
 const titles = [
-  "Computer Science Student",
+  "Computer Science Student @ UMBY",
   "Front End Developer",
-  "Problem Solver",
+  "Game Server Developer",
   "Creative Thinker",
 ];
 
@@ -26,7 +26,7 @@ export default function Home() {
       setText((prev) => {
         if (!isDeleting) {
             if (prev === currentFullText) {
-              setTimeout(() => setIsDeleting(true), 800);
+              setTimeout(() => setIsDeleting(true), 400);
               return prev;
             }
           return currentFullText.substring(0, prev.length + 1);
@@ -40,11 +40,11 @@ export default function Home() {
         }
       });
 
-      let typingSpeed = isDeleting ? 25 : 50;
+      let typingSpeed = isDeleting ? 12 : 25;
       if (!isDeleting && text === currentFullText) {
-        typingSpeed = 800;
+        typingSpeed = 400;
       } else if (isDeleting && text === "") {
-        typingSpeed = 300;
+        typingSpeed = 150;
       }
 
       timeout = setTimeout(handleTyping, typingSpeed);
@@ -87,9 +87,9 @@ export default function Home() {
             transition={{ delay: 0.5, duration: 0.8 }}
             className="text-lg text-gray-500 dark:text-gray-400 max-w-2xl mx-auto mb-10 leading-relaxed"
           >
-            A passionate developer from Universitas Mercubuana Yogyakarta, 
-            dedicated to creating beautiful and functional web experiences. 
-            Always eager to learn new technologies and solve complex problems.
+            A passionate Computer Science student at University Mercubuana Yogyakarta, 
+            dedicated to Front End development and Game Server development. 
+            Always eager to learn new technologies and build amazing digital experiences.
           </motion.p>
 
           <motion.div

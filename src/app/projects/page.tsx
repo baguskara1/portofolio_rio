@@ -1,7 +1,7 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { FiGithub } from "react-icons/fi";
+import { FiGithub, FiExternalLink } from "react-icons/fi";
 import {
   SiLaravel,
   SiPhp,
@@ -29,6 +29,7 @@ const projects = [
       { name: "JavaScript", icon: <SiJavascript className="w-4 h-4" /> },
     ],
     github: "https://github.com/baguskara1/website_samsat",
+    demoUrl: "https://samsat-diy.site/",
     type: "College Project",
     color: "from-indigo-500 to-purple-600",
     icon: <SiLaravel className="w-16 h-16 text-white/30" />,
@@ -43,6 +44,7 @@ const projects = [
       { name: "HTML5", icon: <SiHtml5 className="w-4 h-4" /> },
     ],
     github: "https://github.com/baguskara1/board_game",
+    demoUrl: null,
     type: "Development Project",
     color: "from-cyan-500 to-blue-600",
     icon: <SiReact className="w-16 h-16 text-white/30" />,
@@ -57,6 +59,7 @@ const projects = [
       { name: "Framer Motion", icon: <SiFramer className="w-4 h-4" /> },
     ],
     github: "https://github.com/baguskara1/portofolio_rio",
+    demoUrl: null,
     type: "Personal Project",
     color: "from-gray-700 to-gray-900",
     icon: <SiNextdotjs className="w-16 h-16 text-white/30" />,
@@ -87,12 +90,13 @@ export default function Projects() {
           {projects.map((project, index) => (
             <motion.div
               key={project.title}
-              initial={{ opacity: 0, y: 30 }}
+              initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
-              transition={{ duration: 0.6, delay: index * 0.1 }}
-              whileHover={{ y: -10 }}
-              className="group bg-white dark:bg-gray-950 rounded-2xl shadow-sm border border-gray-100 dark:border-gray-800 overflow-hidden hover:shadow-2xl transition-all duration-500"
+              transition={{ duration: 0.3, delay: index * 0.05 }}
+              whileHover={{ y: -8 }}
+              style={{ transition: "transform 0.2s cubic-bezier(0.25, 0.46, 0.45, 0.94)" }}
+              className="group bg-white dark:bg-gray-950 rounded-2xl shadow-sm border border-gray-100 dark:border-gray-800 overflow-hidden hover:shadow-2xl"
             >
               {/* Gradient Header with Icon */}
               <div className={`relative h-48 bg-gradient-to-br ${project.color} overflow-hidden`}>
@@ -140,6 +144,17 @@ export default function Projects() {
                     <FiGithub className="w-4 h-4" />
                     View Code
                   </a>
+                  {project.demoUrl && (
+                    <a
+                      href={project.demoUrl}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="flex items-center gap-2 text-sm text-gray-600 dark:text-gray-400 hover:text-emerald-600 dark:hover:text-emerald-400 transition-colors font-medium"
+                    >
+                      <FiExternalLink className="w-4 h-4" />
+                      Live Demo
+                    </a>
+                  )}
                 </div>
               </div>
             </motion.div>

@@ -29,24 +29,13 @@ export default function About() {
             transition={{ duration: 0.8 }}
             className="relative"
           >
-            <div className="w-full h-[400px] bg-gradient-to-tr from-indigo-500 to-cyan-500 rounded-2xl shadow-2xl relative overflow-hidden group">
-              {/* Abstract pattern for visual appeal */}
-              <div className="absolute inset-0 opacity-20">
-                <div className="absolute top-10 left-10 w-32 h-32 border-4 border-white rounded-full animate-pulse" />
-                <div className="absolute bottom-20 right-20 w-24 h-24 border-4 border-white rounded-lg rotate-45 group-hover:rotate-90 transition-transform duration-1000" />
-                <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-48 h-48 border border-white rounded-full border-dashed animate-spin-slow" />
-              </div>
-              
-              {/* Initials */}
-              <div className="absolute inset-0 flex items-center justify-center">
-                <span className="text-[120px] font-black text-white/90 select-none">
-                  RA
-                </span>
-              </div>
-              
-              {/* Overlay on hover */}
-              <div className="absolute inset-0 bg-black/0 group-hover:bg-black/20 transition-colors duration-300" />
-            </div>
+<div className="w-full h-[400px] rounded-2xl shadow-2xl overflow-hidden">
+  <img
+    src="/images/fp1.JPG"
+    alt="Rio Ardiyansyah"
+    className="w-full h-full object-cover"
+  />
+</div>
             
             {/* Decorative elements */}
             <div className="absolute -bottom-6 -right-6 w-32 h-32 bg-indigo-100 dark:bg-gray-800 rounded-2xl -z-10" />
@@ -102,7 +91,7 @@ export default function About() {
                 </div>
                 <div>
                   <h4 className="font-semibold text-gray-900 dark:text-white">University</h4>
-                  <p className="text-sm text-gray-500 dark:text-gray-400">UMY (Est. 2024)</p>
+                  <p className="text-sm text-gray-500 dark:text-gray-400">UMBY (Est. 2024)</p>
                 </div>
               </div>
 
