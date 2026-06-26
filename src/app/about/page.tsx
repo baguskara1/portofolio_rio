@@ -32,11 +32,11 @@ export default function About() {
           >
             <div className="w-full h-[400px] rounded-2xl shadow-2xl overflow-hidden">
               <Image
-                src="/portofolio_rio/images/fp1.JPG"
+                src="/images/fp1.JPG"
                 alt="Rio Ardiyansyah"
                 width={600}
                 height={400}
-                className="w-full h-full object-cover"
+                className="w-full h-full object-cover object-top"
                 unoptimized
               />
             </div>
