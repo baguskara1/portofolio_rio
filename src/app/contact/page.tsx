@@ -40,18 +40,29 @@ export default function Contact() {
     }
   ];
 
-  const handleSubmit = async (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     setIsSubmitting(true);
-    
-    // Simulate form submission (replace with actual Formspree endpoint)
-    await new Promise(resolve => setTimeout(resolve, 1500));
-    
-    setIsSubmitting(false);
-    setSubmitted(true);
-    setFormData({ name: "", email: "", message: "" });
-    
-    setTimeout(() => setSubmitted(false), 3000);
+
+    try {
+      const response = await fetch("https://formspree.io/f/mdargkvd", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(formData),
+      });
+
+      if (response.ok) {
+        setSubmitted(true);
+        setFormData({ name: "", email: "", message: "" });
+        setTimeout(() => setSubmitted(false), 3000);
+      } else {
+        alert("Failed to send message. Please try again.");
+      }
+    } catch {
+      alert("An error occurred. Please try again later.");
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   return (
@@ -138,6 +149,7 @@ export default function Contact() {
                   </label>
                   <input
                     type="text"
+                    name="name"
                     id="name"
                     required
                     value={formData.name}
@@ -153,6 +165,7 @@ export default function Contact() {
                   </label>
                   <input
                     type="email"
+                    name="email"
                     id="email"
                     required
                     value={formData.email}
@@ -167,6 +180,7 @@ export default function Contact() {
                     Message
                   </label>
                   <textarea
+                    name="message"
                     id="message"
                     rows={5}
                     required

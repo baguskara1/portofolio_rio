@@ -1,6 +1,7 @@
 "use client";
 
 import { motion } from "framer-motion";
+import Image from "next/image";
 import { FiUser, FiBook, FiMapPin } from "react-icons/fi";
 
 export default function About() {
@@ -29,13 +30,16 @@ export default function About() {
             transition={{ duration: 0.8 }}
             className="relative"
           >
-<div className="w-full h-[400px] rounded-2xl shadow-2xl overflow-hidden">
-  <img
-    src="/images/fp1.JPG"
-    alt="Rio Ardiyansyah"
-    className="w-full h-full object-cover"
-  />
-</div>
+            <div className="w-full h-[400px] rounded-2xl shadow-2xl overflow-hidden">
+              <Image
+                src="/images/fp1.JPG"
+                alt="Rio Ardiyansyah"
+                width={600}
+                height={400}
+                className="w-full h-full object-cover"
+                unoptimized
+              />
+            </div>
             
             {/* Decorative elements */}
             <div className="absolute -bottom-6 -right-6 w-32 h-32 bg-indigo-100 dark:bg-gray-800 rounded-2xl -z-10" />
@@ -55,13 +59,17 @@ export default function About() {
             </h3>
             
             <p className="text-gray-600 dark:text-gray-300 leading-relaxed text-lg">
-              Hello! I&apos;m Rio Ardiyansyah, a passionate Computer Science student at Universitas Mercubuana Yogyakarta (class of 2024). 
+              Hello! I&apos;m Rio Ardiyansyah, a passionate Computer Science student at University Mercubuana Yogyakarta (class of 2024). 
               I specialize in Front End Development and have a keen interest in building modern, responsive, and user-friendly web applications.
             </p>
             
             <p className="text-gray-600 dark:text-gray-300 leading-relaxed text-lg">
-              My journey in tech started with a curiosity about how things work on the web. Today, I enjoy turning complex problems into simple, beautiful, and intuitive solutions. 
-              When I&apos;m not coding, you can find me exploring new technologies or working on personal projects.
+              My journey in tech started in early 2020 when COVID hit. A friend invited me to try 
+              developing for GTA San Andreas Online (SAMP Roleplay) — a multiplayer game server 
+              modification. I was fascinated by how the game world could be expanded and 
+              customized through code. That spark led me to dive deeper into programming, 
+              eventually pursuing Computer Science at University Mercubuana Yogyakarta. Today, 
+              I channel that same passion into building modern web applications.
             </p>
 
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 pt-4">
