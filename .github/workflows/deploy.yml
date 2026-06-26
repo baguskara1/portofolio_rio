@@ -1,0 +1,45 @@
+name: Deploy to GitHub Pages
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  build-and-deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout @ v4
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: "20"
+
+      - name: Install dependencies
+        run: npm install
+
+      - name: Build and Export Next.js App
+        run: npm run build
+        env:
+          NODE_ENV: production # Ensure production build and basePath is applied
+
+      - name: Add .nojekyll file
+        run: touch out/.nojekyll
+
+      - name: Deploy to GitHub Pages
+        uses: peaceiris/actions-gh-pages@v3
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: ./out
+          # Untuk repo seperti username.github.io/repo-name
+          # basePath akan ditambahkan otomatis oleh Next.js karena NODE_ENV=production
+          # Jika ini adalah user/org page (username.github.io), tidak perlu basePath di next.config.ts
+          # Tapi karena ini project page, basePath sudah diatur di next.config.ts
+          # dan .nojekyll sudah dibuat.
+          # The default branch for GitHub Pages is 'gh-pages', but can be configured
+          # to 'main' or 'master' in your repository settings.
+          # If you're deploying to a 'gh-pages' branch, make sure that branch exists or is created.
+          # The action will create it if it doesn't exist and the push is allowed.
