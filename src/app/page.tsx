@@ -4,6 +4,7 @@ import { useState, useEffect } from "react";
 import Link from "next/link";
 import { motion } from "framer-motion";
 import { FiArrowRight, FiMail } from "react-icons/fi";
+import ScrollIndicator from "@/components/ScrollIndicator";
 
 const titles = [
   "Computer Science Student",
@@ -24,10 +25,10 @@ export default function Home() {
     const handleTyping = () => {
       setText((prev) => {
         if (!isDeleting) {
-          if (prev === currentFullText) {
-            setTimeout(() => setIsDeleting(true), 1500);
-            return prev;
-          }
+            if (prev === currentFullText) {
+              setTimeout(() => setIsDeleting(true), 800);
+              return prev;
+            }
           return currentFullText.substring(0, prev.length + 1);
         } else {
           if (prev === "") {
@@ -39,11 +40,11 @@ export default function Home() {
         }
       });
 
-      let typingSpeed = isDeleting ? 30 : 100;
+      let typingSpeed = isDeleting ? 25 : 50;
       if (!isDeleting && text === currentFullText) {
-        typingSpeed = 2000;
+        typingSpeed = 800;
       } else if (isDeleting && text === "") {
-        typingSpeed = 500;
+        typingSpeed = 300;
       }
 
       timeout = setTimeout(handleTyping, typingSpeed);
@@ -115,6 +116,7 @@ export default function Home() {
           </motion.div>
         </motion.div>
       </div>
+      <ScrollIndicator />
     </section>
   );
 }
