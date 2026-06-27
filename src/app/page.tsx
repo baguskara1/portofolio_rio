@@ -25,10 +25,10 @@ export default function Home() {
     const handleTyping = () => {
       setText((prev) => {
         if (!isDeleting) {
-          if (prev === currentFullText) {
-            setTimeout(() => setIsDeleting(true), 200);
-            return prev;
-          }
+            if (prev === currentFullText) {
+              setTimeout(() => setIsDeleting(true), 1000);
+              return prev;
+            }
           return currentFullText.substring(0, prev.length + 1);
         } else {
           if (prev === "") {
@@ -40,11 +40,11 @@ export default function Home() {
         }
       });
 
-      let typingSpeed = isDeleting ? 0 : 0;
+      let typingSpeed = isDeleting ? 30 : 60;
       if (!isDeleting && text === currentFullText) {
-        typingSpeed = 200;
+        typingSpeed = 1000;
       } else if (isDeleting && text === "") {
-        typingSpeed = 100;
+        typingSpeed = 300;
       }
 
       timeout = setTimeout(handleTyping, typingSpeed);
