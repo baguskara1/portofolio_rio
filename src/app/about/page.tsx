@@ -32,7 +32,7 @@ export default function About() {
           >
             <div className="w-full max-w-md mx-auto aspect-[3/4] rounded-2xl shadow-2xl overflow-hidden bg-gray-100 dark:bg-gray-800">
               <Image
-                src="/app/images/fp1.JPG"
+                src="/app/about/fp1.JPG"
                 alt="Rio Ardiyansyah"
                 width={600}
                 height={800}
