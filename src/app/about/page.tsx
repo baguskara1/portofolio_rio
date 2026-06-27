@@ -30,13 +30,13 @@ export default function About() {
             transition={{ duration: 0.8 }}
             className="relative"
           >
-            <div className="w-full h-[400px] rounded-2xl shadow-2xl overflow-hidden">
+            <div className="w-full max-w-md mx-auto aspect-[3/4] rounded-2xl shadow-2xl overflow-hidden bg-gray-100 dark:bg-gray-800">
               <Image
                 src="/images/fp1.JPG"
                 alt="Rio Ardiyansyah"
                 width={600}
-                height={400}
-                className="w-full h-full object-cover object-top"
+                height={800}
+                className="w-full h-full object-cover object-center"
                 unoptimized
               />
             </div>
