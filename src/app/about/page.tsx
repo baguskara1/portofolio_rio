@@ -2,6 +2,7 @@
 
 import { motion } from "framer-motion";
 import Image from "next/image";
+import Link from "next/link";
 import { FiUser, FiBook, FiMapPin } from "react-icons/fi";
 
 export default function About() {
@@ -32,7 +33,7 @@ export default function About() {
           >
             <div className="w-full max-w-md mx-auto aspect-[3/4] rounded-2xl shadow-2xl overflow-hidden bg-gray-100 dark:bg-gray-800">
               <Image
-                src="/app/about/foto1.jpg"
+                src="https://i.imgur.com/Snz6Zf9.jpeg"
                 alt="Rio Ardiyansyah"
                 width={600}
                 height={800}
@@ -115,12 +116,13 @@ export default function About() {
             </div>
 
             <div className="pt-6">
-              <a
-                href="#"
+              <Link
+                href="/CV_Rio_Ardiyansyah.pdf"
+                target="_blank"
                 className="inline-block px-8 py-3 bg-indigo-600 hover:bg-indigo-700 dark:bg-cyan-500 dark:hover:bg-cyan-600 text-white rounded-lg shadow-lg hover:shadow-xl transition-all duration-300"
               >
                 Download CV
-              </a>
+              </Link>
             </div>
           </motion.div>
         </div>

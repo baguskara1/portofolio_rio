@@ -55,6 +55,7 @@ export default function Home() {
   }, [text, isDeleting, currentTitleIndex]);
 
   return (
+    <>
     <section className="relative min-h-[calc(100vh-80px)] flex items-center justify-center overflow-hidden pt-20">
       {/* Background Gradients */}
       <div className="absolute top-0 left-0 w-full h-full overflow-hidden -z-10">
@@ -118,5 +119,37 @@ export default function Home() {
       </div>
       <ScrollIndicator />
     </section>
+
+    <section className="py-20 bg-gray-50/50 dark:bg-gray-900/50">
+      <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+        <motion.h2
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          className="text-2xl font-bold text-gray-900 dark:text-white text-center mb-10"
+        >
+          GitHub <span className="text-indigo-600 dark:text-cyan-400">Stats</span>
+        </motion.h2>
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ delay: 0.2 }}
+          className="flex flex-col md:flex-row items-center justify-center gap-6"
+        >
+          <img
+            src="https://github-readme-stats.vercel.app/api?username=baguskara1&show_icons=true&theme=transparent&hide_border=true&count_private=true"
+            alt="GitHub Stats"
+            className="w-full max-w-md"
+          />
+          <img
+            src="https://github-readme-stats.vercel.app/api/top-langs/?username=baguskara1&layout=compact&theme=transparent&hide_border=true"
+            alt="Top Languages"
+            className="w-full max-w-md"
+          />
+        </motion.div>
+      </div>
+    </section>
+    </>
   );
 }
