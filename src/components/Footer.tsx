@@ -25,7 +25,7 @@ export default function Footer() {
   ];
 
   return (
-    <footer className="border-t border-gray-200/50 dark:border-gray-800/50 bg-white/50 dark:bg-gray-950/50 mt-auto">
+    <footer className="border-t border-gray-800/50 bg-gray-950/50 mt-auto">
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-8 lg:py-12">
         <div className="flex flex-col md:flex-row justify-between items-center gap-6">
           
@@ -33,7 +33,7 @@ export default function Footer() {
             <span className="text-xl font-bold bg-gradient-to-r from-violet-500 to-pink-500 bg-clip-text text-transparent">
               ~rio
             </span>
-            <p className="text-sm text-gray-500 dark:text-gray-400 text-center md:text-left">
+            <p className="text-sm text-gray-400 text-center md:text-left">
               Computer Science Student & Front End Developer
             </p>
           </div>
@@ -47,7 +47,7 @@ export default function Footer() {
                 rel="noopener noreferrer"
                 whileHover={{ y: -3 }}
                 whileTap={{ scale: 0.95 }}
-                className="p-2 rounded-full bg-gray-100 dark:bg-gray-900 text-gray-600 dark:text-gray-400 hover:text-violet-600 dark:hover:text-pink-400 transition-colors"
+                className="p-2 rounded-full bg-gray-900 text-gray-400 hover:text-pink-400 transition-colors"
                 aria-label={link.name}
               >
                 {link.icon}
@@ -57,7 +57,7 @@ export default function Footer() {
           
         </div>
         
-        <div className="mt-8 pt-8 border-t border-gray-200/50 dark:border-gray-800/50 text-center text-sm text-gray-500 dark:text-gray-400">
+        <div className="mt-8 pt-8 border-t border-gray-800/50 text-center text-sm text-gray-400">
           <p>© {currentYear} Rio Ardiyansyah. All rights reserved.</p>
           <p className="mt-1 text-xs">Built with Next.js & Tailwind CSS</p>
         </div>

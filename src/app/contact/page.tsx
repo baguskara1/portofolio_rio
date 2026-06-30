@@ -75,11 +75,11 @@ export default function Contact() {
           transition={{ duration: 0.6 }}
           className="text-center mb-16"
         >
-          <h2 className="text-3xl md:text-4xl font-bold text-gray-900 dark:text-white mb-4">
-            Get In <span className="text-violet-600 dark:text-pink-400">Touch</span>
+          <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">
+            Get In <span className="text-pink-400">Touch</span>
           </h2>
-          <div className="w-16 h-1 bg-violet-600 dark:bg-pink-400 mx-auto rounded-full mb-6" />
-          <p className="text-gray-600 dark:text-gray-400 max-w-2xl mx-auto text-lg">
+          <div className="w-16 h-1 bg-pink-400 mx-auto rounded-full mb-6" />
+          <p className="text-gray-400 max-w-2xl mx-auto text-lg">
             Have a question, want to collaborate, or just want to say hello? Feel free to reach out!
           </p>
         </motion.div>
@@ -104,14 +104,14 @@ export default function Contact() {
                 viewport={{ once: true }}
                 transition={{ duration: 0.5, delay: index * 0.1 }}
                 whileHover={{ x: 10 }}
-                className="flex items-center gap-4 p-5 bg-white dark:bg-gray-900 rounded-xl shadow-sm border border-gray-200 dark:border-gray-800 hover:shadow-xl hover:border-violet-200 dark:hover:border-pink-500/50 transition-all duration-300 group"
+                className="flex items-center gap-4 p-5 bg-gray-900 rounded-xl shadow-sm border border-gray-800 hover:shadow-xl hover:border-pink-500/50 transition-all duration-300 group"
               >
-                <div className="w-12 h-12 bg-violet-50 dark:bg-gray-800 text-violet-600 dark:text-pink-400 rounded-full flex items-center justify-center group-hover:scale-110 transition-transform">
+                <div className="w-12 h-12 bg-gray-800 text-pink-400 rounded-full flex items-center justify-center group-hover:scale-110 transition-transform">
                   {info.icon}
                 </div>
                 <div>
-                  <h3 className="font-semibold text-gray-900 dark:text-white">{info.title}</h3>
-                  <p className="text-sm text-gray-600 dark:text-gray-300">{info.value}</p>
+                  <h3 className="font-semibold text-white">{info.title}</h3>
+                  <p className="text-sm text-gray-300">{info.value}</p>
                 </div>
               </motion.a>
             ))}
@@ -140,11 +140,11 @@ export default function Contact() {
           >
             <form
               onSubmit={handleSubmit}
-              className="bg-white dark:bg-gray-900 p-8 rounded-2xl shadow-sm border border-gray-100 dark:border-gray-800"
+              className="bg-gray-900 p-8 rounded-2xl shadow-sm border border-gray-800"
             >
               <div className="space-y-6">
                 <div>
-                 <label htmlFor="name" className="block text-sm font-medium text-gray-800 dark:text-gray-200 mb-2">
+                 <label htmlFor="name" className="block text-sm font-medium text-gray-200 mb-2">
                    Your Name
                  </label>
                  <input
@@ -154,13 +154,13 @@ export default function Contact() {
                    required
                    value={formData.name}
                    onChange={(e) => setFormData({ ...formData, name: e.target.value })}
-                   className="w-full px-4 py-3 bg-gray-50 dark:bg-gray-800 border border-gray-300 dark:border-gray-600 rounded-lg focus:ring-2 focus:ring-violet-500 dark:focus:ring-pink-500 focus:border-transparent outline-none transition-all text-gray-900 dark:text-white placeholder-gray-500 dark:placeholder-gray-400"
+                   className="w-full px-4 py-3 bg-gray-800 border border-gray-600 rounded-lg focus:ring-2 focus:ring-pink-500 focus:border-transparent outline-none transition-all text-white placeholder-gray-400"
                    placeholder="John Doe"
                  />
                 </div>
 
                 <div>
-                 <label htmlFor="email" className="block text-sm font-medium text-gray-800 dark:text-gray-200 mb-2">
+                 <label htmlFor="email" className="block text-sm font-medium text-gray-200 mb-2">
                    Email Address
                  </label>
                  <input
@@ -170,13 +170,13 @@ export default function Contact() {
                    required
                    value={formData.email}
                    onChange={(e) => setFormData({ ...formData, email: e.target.value })}
-                   className="w-full px-4 py-3 bg-gray-50 dark:bg-gray-800 border border-gray-300 dark:border-gray-600 rounded-lg focus:ring-2 focus:ring-violet-500 dark:focus:ring-pink-500 focus:border-transparent outline-none transition-all text-gray-900 dark:text-white placeholder-gray-500 dark:placeholder-gray-400"
+                   className="w-full px-4 py-3 bg-gray-800 border border-gray-600 rounded-lg focus:ring-2 focus:ring-pink-500 focus:border-transparent outline-none transition-all text-white placeholder-gray-400"
                    placeholder="john@example.com"
                  />
                 </div>
 
                 <div>
-                 <label htmlFor="message" className="block text-sm font-medium text-gray-800 dark:text-gray-200 mb-2">
+                 <label htmlFor="message" className="block text-sm font-medium text-gray-200 mb-2">
                    Message
                  </label>
                  <textarea
@@ -186,7 +186,7 @@ export default function Contact() {
                    required
                    value={formData.message}
                    onChange={(e) => setFormData({ ...formData, message: e.target.value })}
-                   className="w-full px-4 py-3 bg-gray-50 dark:bg-gray-800 border border-gray-300 dark:border-gray-600 rounded-lg focus:ring-2 focus:ring-violet-500 dark:focus:ring-pink-500 focus:border-transparent outline-none transition-all text-gray-900 dark:text-white resize-none placeholder-gray-500 dark:placeholder-gray-400"
+                   className="w-full px-4 py-3 bg-gray-800 border border-gray-600 rounded-lg focus:ring-2 focus:ring-pink-500 focus:border-transparent outline-none transition-all text-white resize-none placeholder-gray-400"
                    placeholder="Your message here..."
                  />
                 </div>
@@ -194,7 +194,7 @@ export default function Contact() {
                 <button
                   type="submit"
                   disabled={isSubmitting}
-                  className="w-full flex items-center justify-center gap-2 px-6 py-3 bg-violet-600 hover:bg-violet-700 dark:bg-pink-500 dark:hover:bg-pink-600 text-white font-semibold rounded-lg shadow-lg hover:shadow-xl transition-all duration-300 disabled:opacity-50 disabled:cursor-not-allowed"
+                  className="w-full flex items-center justify-center gap-2 px-6 py-3 bg-pink-500 hover:bg-pink-600 text-white font-semibold rounded-lg shadow-lg hover:shadow-xl transition-all duration-300 disabled:opacity-50 disabled:cursor-not-allowed"
                 >
                   {isSubmitting ? (
                     <>
