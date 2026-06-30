@@ -1,36 +1,27 @@
-"use client";
-
-import { motion } from "framer-motion";
+import type { Metadata } from "next";
 import Image from "next/image";
 import { FiUser, FiBook, FiMapPin } from "react-icons/fi";
+import AnimatedSection from "@/components/AnimatedSection";
+
+export const metadata: Metadata = {
+  title: "About | ~rio",
+  description: "Learn more about Rio Ardiyansyah — a Computer Science student at University Mercubuana Yogyakarta.",
+};
 
 export default function About() {
   const basePath = process.env.NODE_ENV === 'production' ? '/portofolio_rio' : '';
   return (
     <section className="py-20 lg:py-32 bg-gray-50 dark:bg-gray-900 min-h-[calc(100vh-80px)]">
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.6 }}
-          className="text-center mb-16"
-        >
+        <AnimatedSection className="text-center mb-16">
           <h2 className="text-3xl md:text-4xl font-bold text-gray-900 dark:text-white mb-4">
             About <span className="text-violet-600 dark:text-pink-400">Me</span>
           </h2>
           <div className="w-16 h-1 bg-violet-600 dark:bg-pink-400 mx-auto rounded-full" />
-        </motion.div>
+        </AnimatedSection>
 
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-          {/* Image/Visual Section */}
-          <motion.div
-            initial={{ opacity: 0, x: -30 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.8 }}
-            className="relative"
-          >
+          <AnimatedSection direction="left" className="relative">
             <div className="w-full max-w-md mx-auto aspect-[3/4] rounded-2xl shadow-2xl overflow-hidden bg-gray-100 dark:bg-gray-800">
               <Image
                 src="https://i.imgur.com/Snz6Zf9.jpeg"
@@ -41,20 +32,11 @@ export default function About() {
                 unoptimized
               />
             </div>
-            
-            {/* Decorative elements */}
             <div className="absolute -bottom-6 -right-6 w-32 h-32 bg-violet-100 dark:bg-gray-800 rounded-2xl -z-10" />
             <div className="absolute -top-6 -left-6 w-24 h-24 bg-pink-100 dark:bg-gray-800 rounded-full -z-10" />
-          </motion.div>
+          </AnimatedSection>
 
-          {/* Text Content */}
-          <motion.div
-            initial={{ opacity: 0, x: 30 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.8, delay: 0.2 }}
-            className="space-y-8"
-          >
+          <AnimatedSection direction="right" delay={0.2} className="space-y-8">
             <h3 className="text-2xl font-bold text-gray-900 dark:text-white">
               A dedicated Computer Science student <br className="hidden lg:block"/> based in Yogyakarta
             </h3>
@@ -124,8 +106,51 @@ export default function About() {
                 Download CV
               </a>
             </div>
-          </motion.div>
+          </AnimatedSection>
         </div>
+
+        <AnimatedSection delay={0.3} className="mt-20">
+          <h3 className="text-2xl font-bold text-gray-900 dark:text-white text-center mb-12">
+            My <span className="text-violet-600 dark:text-pink-400">Journey</span>
+          </h3>
+          <div className="relative max-w-3xl mx-auto">
+            <div className="absolute left-4 md:left-1/2 top-0 bottom-0 w-0.5 bg-gray-200 dark:bg-gray-800 md:-translate-x-px" />
+            {[
+              { year: "2020", title: "Started Coding", desc: "Began with GTA San Andreas Online (SAMP Roleplay) game server development. Sparked my passion for programming." },
+              { year: "2024", title: "Computer Science @ UMBY", desc: "Started my Computer Science degree at University Mercubuana Yogyakarta. Built web applications with Laravel, React, and more." },
+              { year: "Now", title: "Front End Developer", desc: "Actively building modern web experiences with Next.js, TypeScript, and Tailwind CSS. Always exploring new technologies." },
+            ].map((item, i) => (
+              <div key={item.year} className={`relative flex items-start gap-6 mb-10 md:mb-12 ${i % 2 === 0 ? 'md:flex-row' : 'md:flex-row-reverse'}`}>
+                <div className="hidden md:flex md:w-1/2 md:justify-end md:pr-8">
+                  {i % 2 === 0 && (
+                    <div className="bg-white dark:bg-gray-950 p-5 rounded-xl shadow-sm border border-gray-100 dark:border-gray-800 text-right">
+                      <span className="text-sm font-mono text-violet-600 dark:text-pink-400">{item.year}</span>
+                      <h4 className="font-semibold text-gray-900 dark:text-white mt-1">{item.title}</h4>
+                      <p className="text-sm text-gray-500 dark:text-gray-400 mt-1">{item.desc}</p>
+                    </div>
+                  )}
+                </div>
+                <div className="relative z-10 flex-shrink-0 w-8 h-8 rounded-full bg-violet-600 dark:bg-pink-500 border-4 border-white dark:border-gray-900 flex items-center justify-center md:mx-auto">
+                  <div className="w-2 h-2 rounded-full bg-white" />
+                </div>
+                <div className="md:hidden flex-1 bg-white dark:bg-gray-950 p-4 rounded-xl shadow-sm border border-gray-100 dark:border-gray-800">
+                  <span className="text-xs font-mono text-violet-600 dark:text-pink-400">{item.year}</span>
+                  <h4 className="font-semibold text-gray-900 dark:text-white text-sm">{item.title}</h4>
+                  <p className="text-xs text-gray-500 dark:text-gray-400 mt-1">{item.desc}</p>
+                </div>
+                <div className="hidden md:flex md:w-1/2 md:pl-8">
+                  {i % 2 !== 0 && (
+                    <div className="bg-white dark:bg-gray-950 p-5 rounded-xl shadow-sm border border-gray-100 dark:border-gray-800">
+                      <span className="text-sm font-mono text-violet-600 dark:text-pink-400">{item.year}</span>
+                      <h4 className="font-semibold text-gray-900 dark:text-white mt-1">{item.title}</h4>
+                      <p className="text-sm text-gray-500 dark:text-gray-400 mt-1">{item.desc}</p>
+                    </div>
+                  )}
+                </div>
+              </div>
+            ))}
+          </div>
+        </AnimatedSection>
       </div>
     </section>
   );

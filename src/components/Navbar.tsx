@@ -6,6 +6,7 @@ import { usePathname } from "next/navigation";
 import { useTheme } from "next-themes";
 import { FiSun, FiMoon, FiMenu, FiX } from "react-icons/fi";
 import { motion, AnimatePresence } from "framer-motion";
+import { useScroll } from "@/hooks/useScroll";
 
 const navLinks = [
   { href: "/", label: "Home" },
@@ -17,29 +18,14 @@ const navLinks = [
 
 export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
-  const [scrolled, setScrolled] = useState(false);
   const [mounted, setMounted] = useState(false);
-  
+  const scrolled = useScroll(20);
+
   const pathname = usePathname();
   const { theme, setTheme } = useTheme();
 
-  // Ensure theme logic only runs on client to prevent hydration mismatch
   useEffect(() => {
-    // eslint-disable-next-line react-hooks/set-state-in-effect
     setMounted(true);
-  }, []);
-
-  useEffect(() => {
-    const handleScroll = () => {
-      if (window.scrollY > 20) {
-        setScrolled(true);
-      } else {
-        setScrolled(false);
-      }
-    };
-
-    window.addEventListener("scroll", handleScroll);
-    return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
   const toggleMenu = () => setIsOpen(!isOpen);
@@ -123,6 +109,7 @@ export default function Navbar() {
               onClick={toggleMenu}
               className="p-2 rounded-lg border border-gray-200 dark:border-gray-800 text-gray-700 dark:text-gray-300"
               aria-label="Toggle Menu"
+              aria-expanded={isOpen}
             >
               {isOpen ? <FiX className="w-6 h-6" /> : <FiMenu className="w-6 h-6" />}
             </button>

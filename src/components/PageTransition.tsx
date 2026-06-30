@@ -15,6 +15,7 @@ export default function PageTransition({ children }: PageTransitionProps) {
       exit={{ opacity: 0, y: 15 }}
       transition={{ duration: 0.5, ease: [0.22, 1, 0.36, 1] }}
       className="w-full"
+      id="main-content"
     >
       {children}
     </motion.div>

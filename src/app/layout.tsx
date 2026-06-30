@@ -13,8 +13,15 @@ const inter = Inter({
 });
 
 export const metadata: Metadata = {
-  title: "Rio Ardiyansyah | Portfolio",
-  description: "Rio Ardiyansyah's personal portfolio website showcasing projects, skills, and experience in Computer Science and Front End Development.",
+  title: "~rio | Portfolio",
+  description: "Rio Ardiyansyah's personal portfolio — Computer Science student, Front End Developer, and Game Server Developer.",
+  openGraph: {
+    title: "~rio | Portfolio",
+    description: "Computer Science student & Front End Developer based in Yogyakarta.",
+    url: "https://baguskara1.github.io/portofolio_rio",
+    siteName: "~rio",
+    type: "website",
+  },
 };
 
 export default function RootLayout({
@@ -25,6 +32,12 @@ export default function RootLayout({
   return (
     <html lang="en" className={`${inter.variable}`}>
       <body>
+        <a
+          href="#main-content"
+          className="sr-only focus:not-sr-only focus:fixed focus:top-4 focus:left-4 focus:z-[100] focus:px-4 focus:py-2 focus:bg-violet-600 focus:text-white focus:rounded-lg focus:outline-none"
+        >
+          Skip to content
+        </a>
         <ThemeProvider attribute="class" defaultTheme="dark" enableSystem>
           <Navbar />
           <PageTransition>{children}</PageTransition>

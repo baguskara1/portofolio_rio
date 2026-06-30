@@ -1,6 +1,4 @@
-"use client";
-
-import { motion } from "framer-motion";
+import type { Metadata } from "next";
 import {
   SiJavascript,
   SiPython,
@@ -23,6 +21,12 @@ import {
 } from "react-icons/si";
 import { FaJava } from "react-icons/fa";
 import { VscVscode } from "react-icons/vsc";
+import AnimatedSection from "@/components/AnimatedSection";
+
+export const metadata: Metadata = {
+  title: "Skills | ~rio",
+  description: "Technical skills and tools of Rio Ardiyansyah — programming languages, frameworks, and development tools.",
+};
 
 const skills = [
   { name: "JavaScript", level: 90, icon: <SiJavascript className="w-6 h-6" />, color: "bg-yellow-400" },
@@ -54,13 +58,7 @@ export default function Skills() {
   return (
     <section className="py-20 lg:py-32 min-h-[calc(100vh-80px)]">
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.6 }}
-          className="text-center mb-16"
-        >
+        <AnimatedSection className="text-center mb-16">
           <h2 className="text-3xl md:text-4xl font-bold text-gray-900 dark:text-white mb-4">
             Technical <span className="text-violet-600 dark:text-pink-400">Skills</span>
           </h2>
@@ -68,22 +66,14 @@ export default function Skills() {
           <p className="text-gray-600 dark:text-gray-400 max-w-2xl mx-auto text-lg">
             Technologies and tools I&apos;ve been working with to create amazing digital experiences.
           </p>
-        </motion.div>
+        </AnimatedSection>
 
         {/* Programming Languages */}
         <div className="mb-20">
           <h3 className="text-xl font-bold text-gray-900 dark:text-white mb-8 text-center">Programming Languages</h3>
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
             {skills.map((skill, index) => (
-              <motion.div
-                key={skill.name}
-                initial={{ opacity: 0, y: 30 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.5, delay: index * 0.05 }}
-                whileHover={{ scale: 1.02, y: -5 }}
-                className="bg-white dark:bg-gray-900 p-6 rounded-xl shadow-sm border border-gray-100 dark:border-gray-800 hover:shadow-lg transition-all duration-300"
-              >
+              <AnimatedSection key={skill.name} delay={index * 0.05} className="bg-white dark:bg-gray-900 p-6 rounded-xl shadow-sm border border-gray-100 dark:border-gray-800 hover:shadow-lg hover:-translate-y-1 transition-all duration-300">
                 <div className="flex items-center justify-between mb-4">
                   <div className="flex items-center gap-3">
                     <div className={`${skill.color} text-white p-2 rounded-lg`}>
@@ -94,15 +84,9 @@ export default function Skills() {
                   <span className="text-sm font-mono text-gray-500 dark:text-gray-400">{skill.level}%</span>
                 </div>
                 <div className="w-full bg-gray-100 dark:bg-gray-800 rounded-full h-2.5 overflow-hidden">
-                  <motion.div
-                    initial={{ width: 0 }}
-                    whileInView={{ width: `${skill.level}%` }}
-                    viewport={{ once: true }}
-                    transition={{ duration: 1, delay: 0.3 + index * 0.05, ease: "easeOut" }}
-                    className={`h-full rounded-full ${skill.color}`}
-                  />
+                  <div className={`h-full rounded-full ${skill.color}`} style={{ width: `${skill.level}%` }} />
                 </div>
-              </motion.div>
+              </AnimatedSection>
             ))}
           </div>
         </div>
@@ -112,18 +96,10 @@ export default function Skills() {
           <h3 className="text-xl font-bold text-gray-900 dark:text-white mb-8 text-center">Tools & Frameworks</h3>
           <div className="flex flex-wrap justify-center gap-4">
             {tools.map((tool, index) => (
-              <motion.div
-                key={tool.name}
-                initial={{ opacity: 0, scale: 0.8 }}
-                whileInView={{ opacity: 1, scale: 1 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.4, delay: index * 0.05 }}
-                whileHover={{ scale: 1.08, y: -5 }}
-                className="flex items-center gap-2 px-6 py-3 bg-white dark:bg-gray-900 border border-gray-200 dark:border-gray-800 rounded-full text-gray-700 dark:text-gray-300 font-medium shadow-sm hover:shadow-md hover:border-violet-300 dark:hover:border-pink-500/50 transition-all cursor-default"
-              >
+              <AnimatedSection key={tool.name} delay={index * 0.05} className="flex items-center gap-2 px-6 py-3 bg-white dark:bg-gray-900 border border-gray-200 dark:border-gray-800 rounded-full text-gray-700 dark:text-gray-300 font-medium shadow-sm hover:shadow-md hover:border-violet-300 dark:hover:border-pink-500/50 hover:-translate-y-1 transition-all cursor-default animate-float" style={{ animationDelay: `${index * 0.2}s` }}>
                 <span className="text-violet-600 dark:text-pink-400">{tool.icon}</span>
                 {tool.name}
-              </motion.div>
+              </AnimatedSection>
             ))}
           </div>
         </div>

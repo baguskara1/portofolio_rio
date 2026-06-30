@@ -1,6 +1,4 @@
-"use client";
-
-import { motion } from "framer-motion";
+import type { Metadata } from "next";
 import { FiGithub, FiExternalLink } from "react-icons/fi";
 import {
   SiLaravel,
@@ -16,6 +14,12 @@ import {
   SiTypescript,
   SiFramer,
 } from "react-icons/si";
+import AnimatedSection from "@/components/AnimatedSection";
+
+export const metadata: Metadata = {
+  title: "Projects | ~rio",
+  description: "Portfolio projects by Rio Ardiyansyah — web applications built with Laravel, React, Next.js, and more.",
+};
 
 const projects = [
   {
@@ -70,13 +74,7 @@ export default function Projects() {
   return (
     <section className="py-20 lg:py-32 bg-gray-50 dark:bg-gray-900 min-h-[calc(100vh-80px)]">
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.6 }}
-          className="text-center mb-16"
-        >
+        <AnimatedSection className="text-center mb-16">
           <h2 className="text-3xl md:text-4xl font-bold text-gray-900 dark:text-white mb-4">
             Featured <span className="text-violet-600 dark:text-pink-400">Projects</span>
           </h2>
@@ -84,31 +82,22 @@ export default function Projects() {
           <p className="text-gray-600 dark:text-gray-400 max-w-2xl mx-auto text-lg">
             Here are some of my recent projects that showcase my skills in web development.
           </p>
-        </motion.div>
+        </AnimatedSection>
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
           {projects.map((project, index) => (
-            <motion.div
+            <AnimatedSection
               key={project.title}
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.3, delay: index * 0.05 }}
-              whileHover={{ y: -8 }}
-              style={{ transition: "transform 0.2s cubic-bezier(0.25, 0.46, 0.45, 0.94)" }}
-              className="group bg-white dark:bg-gray-950 rounded-2xl shadow-sm border border-gray-100 dark:border-gray-800 overflow-hidden hover:shadow-2xl"
+              delay={index * 0.05}
+              className="group bg-white dark:bg-gray-950 rounded-2xl shadow-sm border border-gray-100 dark:border-gray-800 overflow-hidden hover:shadow-2xl hover:-translate-y-2 transition-all duration-300"
             >
               {/* Gradient Header with Icon */}
               <div className={`relative h-48 bg-gradient-to-br ${project.color} overflow-hidden`}>
                 <div className="absolute inset-0 flex items-center justify-center opacity-60 group-hover:opacity-80 transition-opacity duration-500 group-hover:scale-110">
                   {project.icon}
                 </div>
-                
-                {/* Decorative circles */}
                 <div className="absolute -top-8 -right-8 w-32 h-32 bg-white/10 rounded-full" />
                 <div className="absolute -bottom-4 -left-4 w-24 h-24 bg-white/10 rounded-full" />
-                
-                {/* Type badge */}
                 <div className="absolute top-4 right-4">
                   <span className="px-3 py-1 bg-white/20 backdrop-blur-sm text-white text-xs font-medium rounded-full">
                     {project.type}
@@ -157,7 +146,7 @@ export default function Projects() {
                   )}
                 </div>
               </div>
-            </motion.div>
+            </AnimatedSection>
           ))}
         </div>
       </div>

@@ -1,10 +1,17 @@
 "use client";
 
-import { useState, useEffect } from "react";
 import Link from "next/link";
 import { motion } from "framer-motion";
 import { FiArrowRight, FiMail } from "react-icons/fi";
+import {
+  SiReact,
+  SiNextdotjs,
+  SiTypescript,
+  SiTailwindcss,
+} from "react-icons/si";
 import ScrollIndicator from "@/components/ScrollIndicator";
+import MouseGlow from "@/components/MouseGlow";
+import { useTypeWriter } from "@/hooks/useTypeWriter";
 
 const titles = [
   "Computer Science Student @ UMBY",
@@ -13,52 +20,22 @@ const titles = [
   "Creative Thinker",
 ];
 
+const techStack = [
+  { icon: <SiReact className="w-5 h-5" />, name: "React", color: "text-cyan-400" },
+  { icon: <SiNextdotjs className="w-5 h-5" />, name: "Next.js", color: "text-gray-900 dark:text-white" },
+  { icon: <SiTypescript className="w-5 h-5" />, name: "TypeScript", color: "text-blue-500" },
+  { icon: <SiTailwindcss className="w-5 h-5" />, name: "Tailwind", color: "text-teal-400" },
+];
+
 export default function Home() {
-  const [currentTitleIndex, setCurrentTitleIndex] = useState(0);
-  const [text, setText] = useState("");
-  const [isDeleting, setIsDeleting] = useState(false);
-
-  useEffect(() => {
-    let timeout: NodeJS.Timeout;
-    const currentFullText = titles[currentTitleIndex];
-
-    const handleTyping = () => {
-      setText((prev) => {
-        if (!isDeleting) {
-            if (prev === currentFullText) {
-              setTimeout(() => setIsDeleting(true), 1000);
-              return prev;
-            }
-          return currentFullText.substring(0, prev.length + 1);
-        } else {
-          if (prev === "") {
-            setIsDeleting(false);
-            setCurrentTitleIndex((prevIndex) => (prevIndex + 1) % titles.length);
-            return prev;
-          }
-          return prev.substring(0, prev.length - 1);
-        }
-      });
-
-      let typingSpeed = isDeleting ? 30 : 60;
-      if (!isDeleting && text === currentFullText) {
-        typingSpeed = 1000;
-      } else if (isDeleting && text === "") {
-        typingSpeed = 300;
-      }
-
-      timeout = setTimeout(handleTyping, typingSpeed);
-    };
-
-    timeout = setTimeout(handleTyping, 500);
-    return () => clearTimeout(timeout);
-  }, [text, isDeleting, currentTitleIndex]);
+  const text = useTypeWriter(titles);
 
   return (
     <>
     <section className="relative min-h-[calc(100vh-80px)] flex items-center justify-center overflow-hidden pt-20">
+      <MouseGlow />
       {/* Background Gradients */}
-      <div className="absolute top-0 left-0 w-full h-full overflow-hidden -z-10">
+      <div className="absolute top-0 left-0 w-full h-full overflow-hidden -z-20">
         <div className="absolute -top-[10%] -right-[10%] w-[500px] h-[500px] bg-violet-500/20 dark:bg-violet-500/10 blur-[120px] rounded-full" />
         <div className="absolute -bottom-[10%] -left-[10%] w-[500px] h-[500px] bg-pink-500/20 dark:bg-pink-500/10 blur-[120px] rounded-full" />
       </div>
@@ -92,6 +69,25 @@ export default function Home() {
             dedicated to Front End development and Game Server development. 
             Always eager to learn new technologies and build amazing digital experiences.
           </motion.p>
+
+          <motion.div
+            initial={{ opacity: 0, y: 10 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ delay: 0.7, duration: 0.5 }}
+            className="flex items-center justify-center gap-6 mb-10"
+          >
+            {techStack.map((tech) => (
+              <motion.div
+                key={tech.name}
+                whileHover={{ y: -4 }}
+                className="flex items-center gap-1.5 text-sm text-gray-500 dark:text-gray-400"
+                title={tech.name}
+              >
+                <span className={tech.color}>{tech.icon}</span>
+                <span className="hidden sm:inline">{tech.name}</span>
+              </motion.div>
+            ))}
+          </motion.div>
 
           <motion.div
             initial={{ opacity: 0, y: 10 }}
