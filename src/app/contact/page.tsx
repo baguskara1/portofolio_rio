@@ -104,29 +104,29 @@ export default function Contact() {
                 viewport={{ once: true }}
                 transition={{ duration: 0.5, delay: index * 0.1 }}
                 whileHover={{ x: 10 }}
-                className="flex items-center gap-4 p-5 bg-white dark:bg-gray-900 rounded-xl shadow-sm border border-gray-100 dark:border-gray-800 hover:shadow-lg transition-all duration-300 group"
+                className="flex items-center gap-4 p-5 bg-white dark:bg-gray-900 rounded-xl shadow-sm border border-gray-200 dark:border-gray-800 hover:shadow-xl hover:border-violet-200 dark:hover:border-pink-500/50 transition-all duration-300 group"
               >
                 <div className="w-12 h-12 bg-violet-50 dark:bg-gray-800 text-violet-600 dark:text-pink-400 rounded-full flex items-center justify-center group-hover:scale-110 transition-transform">
                   {info.icon}
                 </div>
                 <div>
                   <h3 className="font-semibold text-gray-900 dark:text-white">{info.title}</h3>
-                  <p className="text-sm text-gray-500 dark:text-gray-400">{info.value}</p>
+                  <p className="text-sm text-gray-600 dark:text-gray-300">{info.value}</p>
                 </div>
               </motion.a>
             ))}
 
-            {/* CTA Banner */}
+              {/* CTA Banner */}
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ delay: 0.4 }}
-              className="p-6 bg-gradient-to-r from-violet-500 to-pink-500 rounded-2xl text-white shadow-xl"
+              className="p-6 bg-gradient-to-r from-violet-500 to-pink-500 rounded-2xl text-white shadow-xl hover:shadow-2xl transition-shadow"
             >
-              <h3 className="text-xl font-bold mb-2">Let&apos;s work together!</h3>
-              <p className="text-sm opacity-90">
-                I&apos;m currently open to new opportunities and exciting projects.
+              <h3 className="text-xl font-bold mb-2">Let's work together!</h3>
+              <p className="text-sm">
+                I'm currently open to new opportunities and exciting projects.
               </p>
             </motion.div>
           </motion.div>
@@ -144,51 +144,51 @@ export default function Contact() {
             >
               <div className="space-y-6">
                 <div>
-                  <label htmlFor="name" className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">
-                    Your Name
-                  </label>
-                  <input
-                    type="text"
-                    name="name"
-                    id="name"
-                    required
-                    value={formData.name}
-                    onChange={(e) => setFormData({ ...formData, name: e.target.value })}
-                    className="w-full px-4 py-3 bg-gray-50 dark:bg-gray-800 border border-gray-200 dark:border-gray-700 rounded-lg focus:ring-2 focus:ring-violet-500 dark:focus:ring-pink-500 focus:border-transparent outline-none transition-all text-gray-900 dark:text-white"
-                    placeholder="John Doe"
-                  />
+                 <label htmlFor="name" className="block text-sm font-medium text-gray-800 dark:text-gray-200 mb-2">
+                   Your Name
+                 </label>
+                 <input
+                   type="text"
+                   name="name"
+                   id="name"
+                   required
+                   value={formData.name}
+                   onChange={(e) => setFormData({ ...formData, name: e.target.value })}
+                   className="w-full px-4 py-3 bg-gray-50 dark:bg-gray-800 border border-gray-300 dark:border-gray-600 rounded-lg focus:ring-2 focus:ring-violet-500 dark:focus:ring-pink-500 focus:border-transparent outline-none transition-all text-gray-900 dark:text-white placeholder-gray-500 dark:placeholder-gray-400"
+                   placeholder="John Doe"
+                 />
                 </div>
 
                 <div>
-                  <label htmlFor="email" className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">
-                    Email Address
-                  </label>
-                  <input
-                    type="email"
-                    name="email"
-                    id="email"
-                    required
-                    value={formData.email}
-                    onChange={(e) => setFormData({ ...formData, email: e.target.value })}
-                    className="w-full px-4 py-3 bg-gray-50 dark:bg-gray-800 border border-gray-200 dark:border-gray-700 rounded-lg focus:ring-2 focus:ring-violet-500 dark:focus:ring-pink-500 focus:border-transparent outline-none transition-all text-gray-900 dark:text-white"
-                    placeholder="john@example.com"
-                  />
+                 <label htmlFor="email" className="block text-sm font-medium text-gray-800 dark:text-gray-200 mb-2">
+                   Email Address
+                 </label>
+                 <input
+                   type="email"
+                   name="email"
+                   id="email"
+                   required
+                   value={formData.email}
+                   onChange={(e) => setFormData({ ...formData, email: e.target.value })}
+                   className="w-full px-4 py-3 bg-gray-50 dark:bg-gray-800 border border-gray-300 dark:border-gray-600 rounded-lg focus:ring-2 focus:ring-violet-500 dark:focus:ring-pink-500 focus:border-transparent outline-none transition-all text-gray-900 dark:text-white placeholder-gray-500 dark:placeholder-gray-400"
+                   placeholder="john@example.com"
+                 />
                 </div>
 
                 <div>
-                  <label htmlFor="message" className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">
-                    Message
-                  </label>
-                  <textarea
-                    name="message"
-                    id="message"
-                    rows={5}
-                    required
-                    value={formData.message}
-                    onChange={(e) => setFormData({ ...formData, message: e.target.value })}
-                    className="w-full px-4 py-3 bg-gray-50 dark:bg-gray-800 border border-gray-200 dark:border-gray-700 rounded-lg focus:ring-2 focus:ring-violet-500 dark:focus:ring-pink-500 focus:border-transparent outline-none transition-all text-gray-900 dark:text-white resize-none"
-                    placeholder="Your message here..."
-                  />
+                 <label htmlFor="message" className="block text-sm font-medium text-gray-800 dark:text-gray-200 mb-2">
+                   Message
+                 </label>
+                 <textarea
+                   name="message"
+                   id="message"
+                   rows={5}
+                   required
+                   value={formData.message}
+                   onChange={(e) => setFormData({ ...formData, message: e.target.value })}
+                   className="w-full px-4 py-3 bg-gray-50 dark:bg-gray-800 border border-gray-300 dark:border-gray-600 rounded-lg focus:ring-2 focus:ring-violet-500 dark:focus:ring-pink-500 focus:border-transparent outline-none transition-all text-gray-900 dark:text-white resize-none placeholder-gray-500 dark:placeholder-gray-400"
+                   placeholder="Your message here..."
+                 />
                 </div>
 
                 <button
