@@ -31,7 +31,7 @@ export default function Footer() {
           
           <div className="flex flex-col items-center md:items-start space-y-2">
             <span className="text-xl font-bold bg-gradient-to-r from-violet-500 to-pink-500 bg-clip-text text-transparent">
-              Rio.dev
+              ~rio
             </span>
             <p className="text-sm text-gray-500 dark:text-gray-400 text-center md:text-left">
               Computer Science Student & Front End Developer

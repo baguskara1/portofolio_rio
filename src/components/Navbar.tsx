@@ -62,7 +62,7 @@ export default function Navbar() {
               transition={{ duration: 0.5 }}
               className="text-xl font-bold bg-gradient-to-r from-violet-500 to-pink-500 bg-clip-text text-transparent"
             >
-              Rio.dev
+              ~rio
             </motion.span>
           </Link>
 
