@@ -42,9 +42,9 @@ export default function Blog() {
           className="text-center mb-16"
         >
           <h2 className="text-3xl md:text-4xl font-bold text-gray-900 dark:text-white mb-4">
-            My <span className="text-indigo-600 dark:text-cyan-400">Blog</span>
+            My <span className="text-violet-600 dark:text-pink-400">Blog</span>
           </h2>
-          <div className="w-16 h-1 bg-indigo-600 dark:bg-cyan-400 mx-auto rounded-full mb-6" />
+          <div className="w-16 h-1 bg-violet-600 dark:bg-pink-400 mx-auto rounded-full mb-6" />
           <p className="text-gray-600 dark:text-gray-400 max-w-2xl mx-auto text-lg">
             Thoughts, tutorials, and insights about web development and computer science.
           </p>
@@ -62,7 +62,7 @@ export default function Blog() {
               className="group bg-white dark:bg-gray-950 rounded-2xl shadow-sm border border-gray-100 dark:border-gray-800 overflow-hidden hover:shadow-2xl transition-all duration-500"
             >
               {/* Color accent top */}
-              <div className="h-1 bg-gradient-to-r from-indigo-500 to-cyan-500" />
+              <div className="h-1 bg-gradient-to-r from-violet-500 to-pink-500" />
               
               <div className="p-6">
                 <div className="flex items-center gap-4 text-xs text-gray-500 dark:text-gray-400 mb-4">
@@ -80,7 +80,7 @@ export default function Blog() {
                   </span>
                 </div>
 
-                <h3 className="text-lg font-bold text-gray-900 dark:text-white mb-3 group-hover:text-indigo-600 dark:group-hover:text-cyan-400 transition-colors line-clamp-2">
+                <h3 className="text-lg font-bold text-gray-900 dark:text-white mb-3 group-hover:text-violet-600 dark:group-hover:text-pink-400 transition-colors line-clamp-2">
                   {post.title}
                 </h3>
 
@@ -90,7 +90,7 @@ export default function Blog() {
 
                 <div className="flex flex-wrap gap-2 mb-6">
                   {post.tags.map(tag => (
-                    <span key={tag} className="flex items-center gap-1 text-xs px-2 py-1 bg-indigo-50 dark:bg-gray-800 text-indigo-600 dark:text-cyan-400 rounded-md">
+                    <span key={tag} className="flex items-center gap-1 text-xs px-2 py-1 bg-violet-50 dark:bg-gray-800 text-violet-600 dark:text-pink-400 rounded-md">
                       <FiTag className="w-3 h-3" />
                       {tag}
                     </span>
@@ -99,7 +99,7 @@ export default function Blog() {
 
                 <a
                   href={post.slug}
-                  className="flex items-center gap-2 text-sm font-semibold text-indigo-600 dark:text-cyan-400 group-hover:gap-3 transition-all"
+                  className="flex items-center gap-2 text-sm font-semibold text-violet-600 dark:text-pink-400 group-hover:gap-3 transition-all"
                 >
                   Read More
                   <FiArrowRight className="w-4 h-4" />

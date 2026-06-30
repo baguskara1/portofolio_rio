@@ -30,7 +30,7 @@ export default function Footer() {
         <div className="flex flex-col md:flex-row justify-between items-center gap-6">
           
           <div className="flex flex-col items-center md:items-start space-y-2">
-            <span className="text-xl font-bold bg-gradient-to-r from-indigo-500 to-cyan-500 bg-clip-text text-transparent">
+            <span className="text-xl font-bold bg-gradient-to-r from-violet-500 to-pink-500 bg-clip-text text-transparent">
               Rio.dev
             </span>
             <p className="text-sm text-gray-500 dark:text-gray-400 text-center md:text-left">
@@ -47,7 +47,7 @@ export default function Footer() {
                 rel="noopener noreferrer"
                 whileHover={{ y: -3 }}
                 whileTap={{ scale: 0.95 }}
-                className="p-2 rounded-full bg-gray-100 dark:bg-gray-900 text-gray-600 dark:text-gray-400 hover:text-indigo-600 dark:hover:text-cyan-400 transition-colors"
+                className="p-2 rounded-full bg-gray-100 dark:bg-gray-900 text-gray-600 dark:text-gray-400 hover:text-violet-600 dark:hover:text-pink-400 transition-colors"
                 aria-label={link.name}
               >
                 {link.icon}

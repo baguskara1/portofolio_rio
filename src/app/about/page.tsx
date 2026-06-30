@@ -2,10 +2,10 @@
 
 import { motion } from "framer-motion";
 import Image from "next/image";
-import Link from "next/link";
 import { FiUser, FiBook, FiMapPin } from "react-icons/fi";
 
 export default function About() {
+  const basePath = process.env.NODE_ENV === 'production' ? '/portofolio_rio' : '';
   return (
     <section className="py-20 lg:py-32 bg-gray-50 dark:bg-gray-900 min-h-[calc(100vh-80px)]">
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -17,9 +17,9 @@ export default function About() {
           className="text-center mb-16"
         >
           <h2 className="text-3xl md:text-4xl font-bold text-gray-900 dark:text-white mb-4">
-            About <span className="text-indigo-600 dark:text-cyan-400">Me</span>
+            About <span className="text-violet-600 dark:text-pink-400">Me</span>
           </h2>
-          <div className="w-16 h-1 bg-indigo-600 dark:bg-cyan-400 mx-auto rounded-full" />
+          <div className="w-16 h-1 bg-violet-600 dark:bg-pink-400 mx-auto rounded-full" />
         </motion.div>
 
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
@@ -43,8 +43,8 @@ export default function About() {
             </div>
             
             {/* Decorative elements */}
-            <div className="absolute -bottom-6 -right-6 w-32 h-32 bg-indigo-100 dark:bg-gray-800 rounded-2xl -z-10" />
-            <div className="absolute -top-6 -left-6 w-24 h-24 bg-cyan-100 dark:bg-gray-800 rounded-full -z-10" />
+            <div className="absolute -bottom-6 -right-6 w-32 h-32 bg-violet-100 dark:bg-gray-800 rounded-2xl -z-10" />
+            <div className="absolute -top-6 -left-6 w-24 h-24 bg-pink-100 dark:bg-gray-800 rounded-full -z-10" />
           </motion.div>
 
           {/* Text Content */}
@@ -75,7 +75,7 @@ export default function About() {
 
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 pt-4">
               <div className="flex items-center gap-3 p-4 bg-white dark:bg-gray-950 rounded-xl shadow-sm border border-gray-100 dark:border-gray-800">
-                <div className="p-2 bg-indigo-100 dark:bg-indigo-900/50 text-indigo-600 dark:text-cyan-400 rounded-lg">
+                <div className="p-2 bg-violet-100 dark:bg-violet-900/50 text-violet-600 dark:text-pink-400 rounded-lg">
                   <FiUser className="w-5 h-5" />
                 </div>
                 <div>
@@ -85,7 +85,7 @@ export default function About() {
               </div>
 
               <div className="flex items-center gap-3 p-4 bg-white dark:bg-gray-950 rounded-xl shadow-sm border border-gray-100 dark:border-gray-800">
-                <div className="p-2 bg-indigo-100 dark:bg-indigo-900/50 text-indigo-600 dark:text-cyan-400 rounded-lg">
+                <div className="p-2 bg-violet-100 dark:bg-violet-900/50 text-violet-600 dark:text-pink-400 rounded-lg">
                   <FiBook className="w-5 h-5" />
                 </div>
                 <div>
@@ -95,7 +95,7 @@ export default function About() {
               </div>
 
               <div className="flex items-center gap-3 p-4 bg-white dark:bg-gray-950 rounded-xl shadow-sm border border-gray-100 dark:border-gray-800">
-                <div className="p-2 bg-indigo-100 dark:bg-indigo-900/50 text-indigo-600 dark:text-cyan-400 rounded-lg">
+                <div className="p-2 bg-violet-100 dark:bg-violet-900/50 text-violet-600 dark:text-pink-400 rounded-lg">
                   <FiMapPin className="w-5 h-5" />
                 </div>
                 <div>
@@ -105,7 +105,7 @@ export default function About() {
               </div>
 
               <div className="flex items-center gap-3 p-4 bg-white dark:bg-gray-950 rounded-xl shadow-sm border border-gray-100 dark:border-gray-800">
-                <div className="p-2 bg-indigo-100 dark:bg-indigo-900/50 text-indigo-600 dark:text-cyan-400 rounded-lg">
+                <div className="p-2 bg-violet-100 dark:bg-violet-900/50 text-violet-600 dark:text-pink-400 rounded-lg">
                   <FiBook className="w-5 h-5" />
                 </div>
                 <div>
@@ -116,13 +116,13 @@ export default function About() {
             </div>
 
             <div className="pt-6">
-              <Link
-                href="/CV_Rio_Ardiyansyah.pdf"
-                target="_blank"
-                className="inline-block px-8 py-3 bg-indigo-600 hover:bg-indigo-700 dark:bg-cyan-500 dark:hover:bg-cyan-600 text-white rounded-lg shadow-lg hover:shadow-xl transition-all duration-300"
+              <a
+                href={`${basePath}/CV_Rio_Ardiyansyah.pdf`}
+                download="CV_Rio_Ardiyansyah.pdf"
+                className="inline-block px-8 py-3 bg-violet-600 hover:bg-violet-700 dark:bg-pink-500 dark:hover:bg-pink-600 text-white rounded-lg shadow-lg hover:shadow-xl transition-all duration-300"
               >
                 Download CV
-              </Link>
+              </a>
             </div>
           </motion.div>
         </div>

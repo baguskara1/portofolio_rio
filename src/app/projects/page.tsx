@@ -78,9 +78,9 @@ export default function Projects() {
           className="text-center mb-16"
         >
           <h2 className="text-3xl md:text-4xl font-bold text-gray-900 dark:text-white mb-4">
-            Featured <span className="text-indigo-600 dark:text-cyan-400">Projects</span>
+            Featured <span className="text-violet-600 dark:text-pink-400">Projects</span>
           </h2>
-          <div className="w-16 h-1 bg-indigo-600 dark:bg-cyan-400 mx-auto rounded-full mb-6" />
+          <div className="w-16 h-1 bg-violet-600 dark:bg-pink-400 mx-auto rounded-full mb-6" />
           <p className="text-gray-600 dark:text-gray-400 max-w-2xl mx-auto text-lg">
             Here are some of my recent projects that showcase my skills in web development.
           </p>
@@ -117,7 +117,7 @@ export default function Projects() {
               </div>
               
               <div className="p-6">
-                <h3 className="text-xl font-bold text-gray-900 dark:text-white mb-2 group-hover:text-indigo-600 dark:group-hover:text-cyan-400 transition-colors">
+                <h3 className="text-xl font-bold text-gray-900 dark:text-white mb-2 group-hover:text-violet-600 dark:group-hover:text-pink-400 transition-colors">
                   {project.title}
                 </h3>
                 
@@ -139,7 +139,7 @@ export default function Projects() {
                     href={project.github}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="flex items-center gap-2 text-sm text-gray-600 dark:text-gray-400 hover:text-indigo-600 dark:hover:text-cyan-400 transition-colors font-medium"
+                    className="flex items-center gap-2 text-sm text-gray-600 dark:text-gray-400 hover:text-violet-600 dark:hover:text-pink-400 transition-colors font-medium"
                   >
                     <FiGithub className="w-4 h-4" />
                     View Code

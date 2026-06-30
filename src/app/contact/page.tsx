@@ -76,9 +76,9 @@ export default function Contact() {
           className="text-center mb-16"
         >
           <h2 className="text-3xl md:text-4xl font-bold text-gray-900 dark:text-white mb-4">
-            Get In <span className="text-indigo-600 dark:text-cyan-400">Touch</span>
+            Get In <span className="text-violet-600 dark:text-pink-400">Touch</span>
           </h2>
-          <div className="w-16 h-1 bg-indigo-600 dark:bg-cyan-400 mx-auto rounded-full mb-6" />
+          <div className="w-16 h-1 bg-violet-600 dark:bg-pink-400 mx-auto rounded-full mb-6" />
           <p className="text-gray-600 dark:text-gray-400 max-w-2xl mx-auto text-lg">
             Have a question, want to collaborate, or just want to say hello? Feel free to reach out!
           </p>
@@ -106,7 +106,7 @@ export default function Contact() {
                 whileHover={{ x: 10 }}
                 className="flex items-center gap-4 p-5 bg-white dark:bg-gray-900 rounded-xl shadow-sm border border-gray-100 dark:border-gray-800 hover:shadow-lg transition-all duration-300 group"
               >
-                <div className="w-12 h-12 bg-indigo-50 dark:bg-gray-800 text-indigo-600 dark:text-cyan-400 rounded-full flex items-center justify-center group-hover:scale-110 transition-transform">
+                <div className="w-12 h-12 bg-violet-50 dark:bg-gray-800 text-violet-600 dark:text-pink-400 rounded-full flex items-center justify-center group-hover:scale-110 transition-transform">
                   {info.icon}
                 </div>
                 <div>
@@ -122,7 +122,7 @@ export default function Contact() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ delay: 0.4 }}
-              className="p-6 bg-gradient-to-r from-indigo-500 to-cyan-500 rounded-2xl text-white shadow-xl"
+              className="p-6 bg-gradient-to-r from-violet-500 to-pink-500 rounded-2xl text-white shadow-xl"
             >
               <h3 className="text-xl font-bold mb-2">Let&apos;s work together!</h3>
               <p className="text-sm opacity-90">
@@ -154,7 +154,7 @@ export default function Contact() {
                     required
                     value={formData.name}
                     onChange={(e) => setFormData({ ...formData, name: e.target.value })}
-                    className="w-full px-4 py-3 bg-gray-50 dark:bg-gray-800 border border-gray-200 dark:border-gray-700 rounded-lg focus:ring-2 focus:ring-indigo-500 dark:focus:ring-cyan-500 focus:border-transparent outline-none transition-all text-gray-900 dark:text-white"
+                    className="w-full px-4 py-3 bg-gray-50 dark:bg-gray-800 border border-gray-200 dark:border-gray-700 rounded-lg focus:ring-2 focus:ring-violet-500 dark:focus:ring-pink-500 focus:border-transparent outline-none transition-all text-gray-900 dark:text-white"
                     placeholder="John Doe"
                   />
                 </div>
@@ -170,7 +170,7 @@ export default function Contact() {
                     required
                     value={formData.email}
                     onChange={(e) => setFormData({ ...formData, email: e.target.value })}
-                    className="w-full px-4 py-3 bg-gray-50 dark:bg-gray-800 border border-gray-200 dark:border-gray-700 rounded-lg focus:ring-2 focus:ring-indigo-500 dark:focus:ring-cyan-500 focus:border-transparent outline-none transition-all text-gray-900 dark:text-white"
+                    className="w-full px-4 py-3 bg-gray-50 dark:bg-gray-800 border border-gray-200 dark:border-gray-700 rounded-lg focus:ring-2 focus:ring-violet-500 dark:focus:ring-pink-500 focus:border-transparent outline-none transition-all text-gray-900 dark:text-white"
                     placeholder="john@example.com"
                   />
                 </div>
@@ -186,7 +186,7 @@ export default function Contact() {
                     required
                     value={formData.message}
                     onChange={(e) => setFormData({ ...formData, message: e.target.value })}
-                    className="w-full px-4 py-3 bg-gray-50 dark:bg-gray-800 border border-gray-200 dark:border-gray-700 rounded-lg focus:ring-2 focus:ring-indigo-500 dark:focus:ring-cyan-500 focus:border-transparent outline-none transition-all text-gray-900 dark:text-white resize-none"
+                    className="w-full px-4 py-3 bg-gray-50 dark:bg-gray-800 border border-gray-200 dark:border-gray-700 rounded-lg focus:ring-2 focus:ring-violet-500 dark:focus:ring-pink-500 focus:border-transparent outline-none transition-all text-gray-900 dark:text-white resize-none"
                     placeholder="Your message here..."
                   />
                 </div>
@@ -194,7 +194,7 @@ export default function Contact() {
                 <button
                   type="submit"
                   disabled={isSubmitting}
-                  className="w-full flex items-center justify-center gap-2 px-6 py-3 bg-indigo-600 hover:bg-indigo-700 dark:bg-cyan-500 dark:hover:bg-cyan-600 text-white font-semibold rounded-lg shadow-lg hover:shadow-xl transition-all duration-300 disabled:opacity-50 disabled:cursor-not-allowed"
+                  className="w-full flex items-center justify-center gap-2 px-6 py-3 bg-violet-600 hover:bg-violet-700 dark:bg-pink-500 dark:hover:bg-pink-600 text-white font-semibold rounded-lg shadow-lg hover:shadow-xl transition-all duration-300 disabled:opacity-50 disabled:cursor-not-allowed"
                 >
                   {isSubmitting ? (
                     <>

@@ -59,8 +59,8 @@ export default function Home() {
     <section className="relative min-h-[calc(100vh-80px)] flex items-center justify-center overflow-hidden pt-20">
       {/* Background Gradients */}
       <div className="absolute top-0 left-0 w-full h-full overflow-hidden -z-10">
-        <div className="absolute -top-[10%] -right-[10%] w-[500px] h-[500px] bg-indigo-500/20 dark:bg-indigo-500/10 blur-[120px] rounded-full" />
-        <div className="absolute -bottom-[10%] -left-[10%] w-[500px] h-[500px] bg-cyan-500/20 dark:bg-cyan-500/10 blur-[120px] rounded-full" />
+        <div className="absolute -top-[10%] -right-[10%] w-[500px] h-[500px] bg-violet-500/20 dark:bg-violet-500/10 blur-[120px] rounded-full" />
+        <div className="absolute -bottom-[10%] -left-[10%] w-[500px] h-[500px] bg-pink-500/20 dark:bg-pink-500/10 blur-[120px] rounded-full" />
       </div>
 
       <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center z-10">
@@ -70,14 +70,14 @@ export default function Home() {
           transition={{ duration: 0.8, ease: "easeOut" }}
         >
           <h1 className="text-5xl md:text-7xl font-bold text-gray-900 dark:text-white mb-6">
-            Hi, I&apos;m <span className="text-indigo-600 dark:text-cyan-400">Rio</span>
+            Hi, I&apos;m <span className="text-violet-600 dark:text-pink-400">Rio</span>
           </h1>
           
           <div className="h-12 md:h-16 flex items-center justify-center mb-8">
             <span className="text-xl md:text-2xl text-gray-600 dark:text-gray-300">
               I&apos;m a&nbsp;
             </span>
-            <span className="text-xl md:text-2xl font-mono text-indigo-600 dark:text-cyan-400 min-w-[280px] md:min-w-[400px] text-left border-r-2 border-indigo-600 dark:border-cyan-400 pr-1">
+            <span className="text-xl md:text-2xl font-mono text-violet-600 dark:text-pink-400 min-w-[280px] md:min-w-[400px] text-left border-r-2 border-violet-600 dark:border-pink-400 pr-1">
               {text}
             </span>
           </div>
@@ -101,7 +101,7 @@ export default function Home() {
           >
             <Link
               href="/projects"
-              className="group flex items-center gap-2 px-6 py-3 bg-indigo-600 hover:bg-indigo-700 dark:bg-cyan-500 dark:hover:bg-cyan-600 text-white rounded-lg shadow-lg hover:shadow-xl transition-all duration-300"
+              className="group flex items-center gap-2 px-6 py-3 bg-violet-600 hover:bg-violet-700 dark:bg-pink-500 dark:hover:bg-pink-600 text-white rounded-lg shadow-lg hover:shadow-xl transition-all duration-300"
             >
               View My Work
               <FiArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
@@ -128,7 +128,7 @@ export default function Home() {
           viewport={{ once: true }}
           className="text-2xl font-bold text-gray-900 dark:text-white text-center mb-10"
         >
-          GitHub <span className="text-indigo-600 dark:text-cyan-400">Stats</span>
+          GitHub <span className="text-violet-600 dark:text-pink-400">Stats</span>
         </motion.h2>
         <motion.div
           initial={{ opacity: 0, y: 20 }}

@@ -62,9 +62,9 @@ export default function Skills() {
           className="text-center mb-16"
         >
           <h2 className="text-3xl md:text-4xl font-bold text-gray-900 dark:text-white mb-4">
-            Technical <span className="text-indigo-600 dark:text-cyan-400">Skills</span>
+            Technical <span className="text-violet-600 dark:text-pink-400">Skills</span>
           </h2>
-          <div className="w-16 h-1 bg-indigo-600 dark:bg-cyan-400 mx-auto rounded-full mb-6" />
+          <div className="w-16 h-1 bg-violet-600 dark:bg-pink-400 mx-auto rounded-full mb-6" />
           <p className="text-gray-600 dark:text-gray-400 max-w-2xl mx-auto text-lg">
             Technologies and tools I&apos;ve been working with to create amazing digital experiences.
           </p>
@@ -119,9 +119,9 @@ export default function Skills() {
                 viewport={{ once: true }}
                 transition={{ duration: 0.4, delay: index * 0.05 }}
                 whileHover={{ scale: 1.08, y: -5 }}
-                className="flex items-center gap-2 px-6 py-3 bg-white dark:bg-gray-900 border border-gray-200 dark:border-gray-800 rounded-full text-gray-700 dark:text-gray-300 font-medium shadow-sm hover:shadow-md hover:border-indigo-300 dark:hover:border-cyan-500/50 transition-all cursor-default"
+                className="flex items-center gap-2 px-6 py-3 bg-white dark:bg-gray-900 border border-gray-200 dark:border-gray-800 rounded-full text-gray-700 dark:text-gray-300 font-medium shadow-sm hover:shadow-md hover:border-violet-300 dark:hover:border-pink-500/50 transition-all cursor-default"
               >
-                <span className="text-indigo-600 dark:text-cyan-400">{tool.icon}</span>
+                <span className="text-violet-600 dark:text-pink-400">{tool.icon}</span>
                 {tool.name}
               </motion.div>
             ))}

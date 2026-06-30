@@ -60,7 +60,7 @@ export default function Navbar() {
               initial={{ opacity: 0, x: -20 }}
               animate={{ opacity: 1, x: 0 }}
               transition={{ duration: 0.5 }}
-              className="text-xl font-bold bg-gradient-to-r from-indigo-500 to-cyan-500 bg-clip-text text-transparent"
+              className="text-xl font-bold bg-gradient-to-r from-violet-500 to-pink-500 bg-clip-text text-transparent"
             >
               Rio.dev
             </motion.span>
@@ -77,15 +77,15 @@ export default function Navbar() {
                       href={link.href}
                       className={`relative text-sm font-medium transition-colors py-2 ${
                         isActive
-                          ? "text-indigo-600 dark:text-cyan-400"
-                          : "text-gray-600 dark:text-gray-300 hover:text-indigo-600 dark:hover:text-cyan-400"
+                          ? "text-violet-600 dark:text-pink-400"
+                          : "text-gray-600 dark:text-gray-300 hover:text-violet-600 dark:hover:text-pink-400"
                       }`}
                     >
                       {link.label}
                       {isActive && (
                         <motion.span
                           layoutId="underline"
-                          className="absolute bottom-0 left-0 right-0 h-0.5 bg-indigo-600 dark:bg-cyan-400 rounded-full"
+                          className="absolute bottom-0 left-0 right-0 h-0.5 bg-violet-600 dark:bg-pink-400 rounded-full"
                           transition={{ type: "spring", stiffness: 380, damping: 30 }}
                         />
                       )}
@@ -150,7 +150,7 @@ export default function Navbar() {
                     onClick={() => setIsOpen(false)}
                     className={`block px-3 py-3 rounded-lg text-base font-medium transition-colors ${
                       isActive
-                        ? "bg-indigo-50 dark:bg-gray-900 text-indigo-600 dark:text-cyan-400"
+                        ? "bg-violet-50 dark:bg-gray-900 text-violet-600 dark:text-pink-400"
                         : "text-gray-600 dark:text-gray-300 hover:bg-gray-50 dark:hover:bg-gray-900/50"
                     }`}
                   >
