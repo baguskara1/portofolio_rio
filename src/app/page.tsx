@@ -137,7 +137,7 @@ export default function Home() {
             <img
               src="https://avatars.githubusercontent.com/u/71247097?v=4"
               alt="GitHub Avatar"
-              className="w-16 h-16 rounded-full border-2 border-violet-500"
+              className="w-16 h-16 rounded-full border-2 border-pink-500"
             />
             <div>
               <h3 className="font-bold text-white text-lg">baguskara1</h3>
