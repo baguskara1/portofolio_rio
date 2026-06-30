@@ -124,25 +124,48 @@ export default function Home() {
           viewport={{ once: true }}
           className="text-2xl font-bold text-gray-900 dark:text-white text-center mb-10"
         >
-          GitHub <span className="text-violet-600 dark:text-pink-400">Stats</span>
+          GitHub <span className="text-violet-600 dark:text-pink-400">Profile</span>
         </motion.h2>
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ delay: 0.2 }}
-          className="flex flex-col md:flex-row items-center justify-center gap-6"
+          className="bg-white dark:bg-gray-900 rounded-2xl p-8 shadow-sm border border-gray-200 dark:border-gray-800 max-w-md mx-auto"
         >
-          <img
-            src="https://github-readme-stats.vercel.app/api?username=baguskara1&show_icons=true&theme=transparent&hide_border=true&count_private=true"
-            alt="GitHub Stats"
-            className="w-full max-w-md"
-          />
-          <img
-            src="https://github-readme-stats.vercel.app/api/top-langs/?username=baguskara1&layout=compact&theme=transparent&hide_border=true"
-            alt="Top Languages"
-            className="w-full max-w-md"
-          />
+          <div className="flex items-center gap-4 mb-6">
+            <img
+              src="https://avatars.githubusercontent.com/u/71247097?v=4"
+              alt="GitHub Avatar"
+              className="w-16 h-16 rounded-full border-2 border-violet-500"
+            />
+            <div>
+              <h3 className="font-bold text-gray-900 dark:text-white text-lg">baguskara1</h3>
+              <p className="text-sm text-gray-500 dark:text-gray-400">Rio Ardiyansyah</p>
+            </div>
+          </div>
+          <div className="grid grid-cols-3 gap-4 mb-6 text-center">
+            <div>
+              <p className="text-2xl font-bold text-violet-600 dark:text-pink-400">8</p>
+              <p className="text-xs text-gray-500 dark:text-gray-400">Repos</p>
+            </div>
+            <div>
+              <p className="text-2xl font-bold text-violet-600 dark:text-pink-400">0</p>
+              <p className="text-xs text-gray-500 dark:text-gray-400">Followers</p>
+            </div>
+            <div>
+              <p className="text-2xl font-bold text-violet-600 dark:text-pink-400">0</p>
+              <p className="text-xs text-gray-500 dark:text-gray-400">Following</p>
+            </div>
+          </div>
+          <a
+            href="https://github.com/baguskara1"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="block w-full text-center px-4 py-2 bg-gray-900 dark:bg-gray-800 hover:bg-gray-800 dark:hover:bg-gray-700 text-white rounded-lg transition-colors"
+          >
+            View on GitHub
+          </a>
         </motion.div>
       </div>
     </section>

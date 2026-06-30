@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import "./globals.css";
-import { ThemeProvider } from "next-themes";
+
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import PageTransition from "@/components/PageTransition";
@@ -30,7 +30,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" className={`${inter.variable}`}>
+    <html lang="en" className={`${inter.variable} dark`}>
       <body>
         <a
           href="#main-content"
@@ -38,12 +38,10 @@ export default function RootLayout({
         >
           Skip to content
         </a>
-        <ThemeProvider attribute="class" defaultTheme="dark" enableSystem>
-          <Navbar />
-          <PageTransition>{children}</PageTransition>
-          <Footer />
-          <BackToTop />
-        </ThemeProvider>
+        <Navbar />
+        <PageTransition>{children}</PageTransition>
+        <Footer />
+        <BackToTop />
       </body>
     </html>
   );

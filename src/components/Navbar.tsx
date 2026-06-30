@@ -1,10 +1,9 @@
 "use client";
 
-import { useState, useEffect } from "react";
+import { useState } from "react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import { useTheme } from "next-themes";
-import { FiSun, FiMoon, FiMenu, FiX } from "react-icons/fi";
+import { FiMenu, FiX } from "react-icons/fi";
 import { motion, AnimatePresence } from "framer-motion";
 import { useScroll } from "@/hooks/useScroll";
 
@@ -18,15 +17,9 @@ const navLinks = [
 
 export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
-  const [mounted, setMounted] = useState(false);
   const scrolled = useScroll(20);
 
   const pathname = usePathname();
-  const { theme, setTheme } = useTheme();
-
-  useEffect(() => {
-    setMounted(true);
-  }, []);
 
   const toggleMenu = () => setIsOpen(!isOpen);
 
@@ -80,31 +73,10 @@ export default function Navbar() {
                 );
               })}
             </ul>
-
-            {/* Dark Mode Toggle */}
-            {mounted && (
-              <button
-                onClick={() => setTheme(theme === "dark" ? "light" : "dark")}
-                className="p-2 rounded-full border border-gray-200 dark:border-gray-800 hover:bg-gray-100 dark:hover:bg-gray-900 transition-colors text-gray-700 dark:text-gray-300"
-                aria-label="Toggle Theme"
-              >
-                {theme === "dark" ? <FiSun className="w-4 h-4" /> : <FiMoon className="w-4 h-4" />}
-              </button>
-            )}
           </nav>
 
-          {/* Mobile Menu & Theme Toggle */}
-          <div className="flex items-center space-x-4 md:hidden">
-            {mounted && (
-              <button
-                onClick={() => setTheme(theme === "dark" ? "light" : "dark")}
-                className="p-2 rounded-full border border-gray-200 dark:border-gray-800 hover:bg-gray-100 dark:hover:bg-gray-900 transition-colors text-gray-700 dark:text-gray-300"
-                aria-label="Toggle Theme"
-              >
-                {theme === "dark" ? <FiSun className="w-4 h-4" /> : <FiMoon className="w-4 h-4" />}
-              </button>
-            )}
-            
+          {/* Mobile Menu Button */}
+          <div className="flex items-center md:hidden">
             <button
               onClick={toggleMenu}
               className="p-2 rounded-lg border border-gray-200 dark:border-gray-800 text-gray-700 dark:text-gray-300"
